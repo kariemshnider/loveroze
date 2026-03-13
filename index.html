@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>رسالة ليكي ❤️</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(45deg,#ff4b6e,#ff9a9e);
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+/* صفحة الباسورد */
+
+#login{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:rgba(0,0,0,0.4);
+padding:40px;
+border-radius:20px;
+}
+
+input{
+padding:12px;
+border:none;
+border-radius:10px;
+text-align:center;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:10px;
+background:#ff2e63;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+/* الصفحة الرئيسية */
+
+#main{
+display:none;
+padding-top:50px;
+}
+
+/* الصور والفيديو */
+
+.media{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.media img{
+width:200px;
+border-radius:15px;
+box-shadow:0 0 10px rgba(0,0,0,0.4);
+}
+
+.media video{
+width:350px;
+border-radius:15px;
+box-shadow:0 0 15px rgba(0,0,0,0.5);
+}
+
+/* القلوب */
+
+.heart{
+position:absolute;
+color:red;
+font-size:20px;
+animation:fall 5s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-100px)}
+100%{transform:translateY(100vh)}
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="login">
+
+<h2>لو لسه فاكراني ❤️</h2>
+<p>اكتبي الباسورد</p>
+
+<input id="pass" placeholder="الباسورد">
+
+<br><br>
+
+<button onclick="check()">دخول</button>
+
+</div>
+
+
+<div id="main">
+
+<h1>أنا آسف ❤️</h1>
+
+<p style="max-width:600px;margin:auto;font-size:20px;">
+أنا عارف إني غلطت…  
+بس بجد مفيش حد في حياتي أهم منك.  
+كل صورة وكل ذكرى هنا بتفكرني قد ايه انتي غالية عندي.  
+أتمنى تسامحيني ❤️  
+<br><br>
+– كريم
+</p>
+
+
+<div class="media">
+
+<img src="1.jpg">
+<img src="2.jpg">
+<img src="3.jpg">
+
+<video controls>
+<source src="video.mp4" type="video/mp4">
+</video>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* الباسورد */
+
+function check(){
+
+let password=document.getElementById("pass").value
+
+if(password==="بحب كريم"){
+
+document.getElementById("login").style.display="none"
+
+document.getElementById("main").style.display="block"
+
+}else{
+
+alert("الباسورد غلط ❤️")
+
+}
+
+}
+
+/* قلوب */
+
+setInterval(()=>{
+
+let heart=document.createElement("div")
+
+heart.className="heart"
+
+heart.innerHTML="❤"
+
+heart.style.left=Math.random()*100+"vw"
+
+heart.style.fontSize=Math.random()*20+10+"px"
+
+document.body.appendChild(heart)
+
+setTimeout(()=>{
+
+heart.remove()
+
+},5000)
+
+},300)
+
+</script>
+
+</body>
+</html>
